@@ -12,10 +12,8 @@ import android.widget.Toast;
 
 public class LevelsHub extends AppCompatActivity {
 
-    //GridLayout mainGrid;
-    //CardView pronombresCard1;
-    //CardView numeros1Card2;
-    //CardView numeros2Card3;
+    private Button numeros1Btn2;
+    private Button numeros2Btn3;
     private Button pronombresBtn1;
 
     @Override
@@ -23,74 +21,48 @@ public class LevelsHub extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levels_hub);
 
-        //mainGrid = (GridLayout) findViewById(R.id.mainGrid);
+
         pronombresBtn1 = (Button) findViewById(R.id.pronombresBtn1);
-        //numeros1Btn2 = (Button) findViewById(R.id.numeros1Btn2);
-        //numeros2Btn3 = (Button) findViewById(R.id.numeros2Btn3);
+        numeros1Btn2 = (Button) findViewById(R.id.numeros1Btn2);
+        numeros2Btn3 = (Button) findViewById(R.id.numeros2Btn3);
 
         //Set Event
-        pronombresLevel (pronombresBtn1);
-        //setSingleEvent (mainGrid);
-        //setToggleEvent (mainGrid);
+        pronombresLevel1 (pronombresBtn1);
+        numeros1Level2 (numeros1Btn2);
+        numeros2Level3 (numeros2Btn3);
     }
 
-    private void pronombresLevel(Button pronombresBtn1) {
+    private void pronombresLevel1(Button pronombresBtn1) {
         pronombresBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Funciona", Toast.LENGTH_SHORT).show();
-                Intent accountIntent = new Intent(LevelsHub.this, profileActivity.class);
+                Intent accountIntent = new Intent(LevelsHub.this, pronombresLevel1.class);
                 startActivity(accountIntent);
                 finish();
             }
         });
     }
-
-/*private void setToggleEvent(GridLayout mainGrid) {
-    //ciclar childs de mainGrid
-    for (int i=0;i<mainGrid.getChildCount();i++){
-        final CardView cardView = (CardView) mainGrid.getChildAt(i);
-        cardView.setOnClickListener(new View.OnClickListener() {
+    private void numeros1Level2(Button numeros1Btn2) {
+        numeros1Btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (cardView.getCardBackgroundColor().getDefaultColor() ==
--1){
-                    //Cambia el color
-
-cardView.setCardBackgroundColor(Color.parseColor("#FF6F00"));
-                    Toast.makeText(LevelsHub.this,"State:
-true",Toast.LENGTH_SHORT).show();
-                }else{
-
-cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                    Toast.makeText(LevelsHub.this,"State:
-false",Toast.LENGTH_SHORT).show();
-                }
+                Toast.makeText(getApplicationContext(),"Funciona", Toast.LENGTH_SHORT).show();
+                Intent accountIntent = new Intent(LevelsHub.this, numero1Level2.class);
+                startActivity(accountIntent);
+                finish();
             }
         });
     }
-}*/
-
-/*private void setSingleEvent(GridLayout mainGrid) {
-    //ciclar childs de mainGrid
-    for (int i=0;i<mainGrid.getChildCount();i++){
-        CardView cardView = (CardView) mainGrid.getChildAt(i);
-        final int finalI = i;
-        cardView.setOnClickListener(new View.OnClickListener() {
+    private void numeros2Level3(Button numeros2Btn3) {
+        numeros2Btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(LevelsHub.this,"Cliqueado en index " +
-finalI,Toast.LENGTH_SHORT).show();
-                if (finalI == 0){
-                    Toast.makeText(LevelsHub.this,"Clicado
-pronombres",Toast.LENGTH_SHORT).show();
-                    Intent accountIntent = new Intent(LevelsHub.this,
-profileActivity.class);
-                    startActivity(accountIntent);
-                    finish();
-                }
+                Toast.makeText(getApplicationContext(),"Funciona", Toast.LENGTH_SHORT).show();
+                Intent accountIntent = new Intent(LevelsHub.this, numeros2Level3.class);
+                startActivity(accountIntent);
+                finish();
             }
         });
     }
- }*/
 }
