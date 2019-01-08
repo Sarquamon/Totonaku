@@ -10,23 +10,20 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class pronombresLevel1 extends AppCompatActivity {
-    private Button pronombres1Level1BackBtn, pronombresakinAudioBtn, pronombresakitAudioBtn;
-    private MediaPlayer pronombresakinAudio, pronombresakitAudio;
+    private Button pronombres1Level1BackBtn, pronombresakitAudioBtn;
+    private MediaPlayer pronombresakitAudio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pronombres_level2);
+        setContentView(R.layout.activity_pronombres_level1);
 
         //Button Asign
         pronombres1Level1BackBtn = (Button) findViewById(R.id.pronombres1Level1BackBtn);
-        //pronombresakinAudioBtn = (Button) findViewById(R.id.pronombresakinAudioBtn);
         pronombresakitAudioBtn = (Button) findViewById(R.id.pronombresakitAudioBtn);
 
-        pronombresakinAudio = MediaPlayer.create(pronombresLevel1.this,R.raw.pronombresakin);
         pronombresakitAudio = MediaPlayer.create(pronombresLevel1.this,R.raw.pronombresakit);
 
-        //ponerpronombresakinAudio (pronombresakinAudioBtn);
         ponerpronombresakitAudio (pronombresakitAudioBtn);
         Regresar(pronombres1Level1BackBtn);
     }
@@ -40,18 +37,8 @@ public class pronombresLevel1 extends AppCompatActivity {
         });
     }
 
-    /*private void ponerpronombresakinAudio(Button pronombresakinAudioBtn) {
-        pronombresakinAudioBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pronombresakinAudio.start();
-            }
-        });
-    }*/
-
     public void onPause(){
         super.onPause();
-        pronombresakinAudio.release();
         pronombresakitAudio.release();
     }
 

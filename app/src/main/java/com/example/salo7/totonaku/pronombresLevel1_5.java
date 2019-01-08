@@ -9,39 +9,38 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class pronombresLevel1_2 extends AppCompatActivity {
+public class pronombresLevel1_5 extends AppCompatActivity {
 
-    private Button pronombres1Level1BackBtn, pronombresxlaAudioBtn;
-    private MediaPlayer pronombresxlaAudio;
+    private Button pronombres1Level1BackBtn, pronombresxlakanAudioBtn;
+    private MediaPlayer pronombresxlakanAudio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pronombres_level1_2);
-
+        setContentView(R.layout.activity_pronombres_level1_5);
 
         //Button Asign
         pronombres1Level1BackBtn = (Button) findViewById(R.id.pronombres1Level1BackBtn);
-        pronombresxlaAudioBtn = (Button) findViewById(R.id.pronombresxlaAudioBtn);
+        pronombresxlakanAudioBtn = (Button) findViewById(R.id.pronombresxlakanAudioBtn);
 
-        pronombresxlaAudio = MediaPlayer.create(pronombresLevel1_2.this,R.raw.pronombresxla);
+        pronombresxlakanAudio = MediaPlayer.create(pronombresLevel1_5.this,R.raw.pronombresxlakan);
 
-        ponerpronombresxlaAudio (pronombresxlaAudioBtn);
+        ponerpronombresakitAudio (pronombresxlakanAudioBtn);
         Regresar(pronombres1Level1BackBtn);
     }
 
-    private void ponerpronombresxlaAudio(Button pronombresxlaAudioBtn) {
-        pronombresxlaAudioBtn.setOnClickListener(new View.OnClickListener() {
+    private void ponerpronombresakitAudio(Button pronombresxlakanAudioBtn) {
+        pronombresxlakanAudioBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pronombresxlaAudio.start();
+                pronombresxlakanAudio.start();
             }
         });
     }
 
     public void onPause(){
         super.onPause();
-        pronombresxlaAudio.release();
+        pronombresxlakanAudio.release();
     }
 
     private void Regresar (Button pronombres1Level1BackBtn){
@@ -49,7 +48,7 @@ public class pronombresLevel1_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Funciona", Toast.LENGTH_SHORT).show();
-                Intent accountIntent = new Intent(pronombresLevel1_2.this, LevelsHub.class);
+                Intent accountIntent = new Intent(pronombresLevel1_5.this, LevelsHub.class);
                 startActivity(accountIntent);
                 finish();
             }
@@ -62,27 +61,25 @@ public class pronombresLevel1_2 extends AppCompatActivity {
 
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.radio_xla:
+            case R.id.radio_xlakan:
                 if (checked)
                     Toast.makeText(getApplicationContext(),"¡Felicidades!", Toast.LENGTH_SHORT).show();
-                Intent accountIntent = new Intent(pronombresLevel1_2.this, pronombresLevel1_3.class);
+                Intent accountIntent = new Intent(pronombresLevel1_5.this, pronombresLevel1_6.class);
                 startActivity(accountIntent);
                 finish();
                 break;
-            case R.id.radio_akin:
+            case R.id.radio_akit:
                 if (checked)
                     Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.radio_xlakan:
+            case R.id.radio_xla:
                 if (checked)
                     Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.radio_wix:
+            case R.id.radio_wixin:
                 if (checked)
                     Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
-
-
 }

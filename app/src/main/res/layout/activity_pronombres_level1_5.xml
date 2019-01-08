@@ -48,12 +48,12 @@
                     android:layout_width="120dp"
                     android:layout_height="90dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/yo" />
+                    android:src="@drawable/ellos" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yo"
+                    android:text="Ellos"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -75,24 +75,35 @@
         >
 
         <RadioButton
-            android:id="@+id/radio_akit"
+            android:id="@+id/radio_wixin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlue"
             android:onClick="onRadioButtonClicked"
-            android:text="Akit"
+            android:text="Wixin"
             android:textSize="32dp"
             android:layout_marginBottom="5dp"
             />
 
         <RadioButton
-            android:id="@+id/radio_akin"
+            android:id="@+id/radio_akint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="Akin"
+            android:text="Akit"
             android:textSize="32dp"
             android:textColor="@color/colorBlue"
+            android:layout_marginBottom="5dp"/>
+
+        <RadioButton
+            android:id="@+id/radio_xlakan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="@color/colorBlue"
+            android:text="Xlakan"
+            android:textSize="32dp"
+
             android:layout_marginBottom="5dp"/>
 
         <RadioButton
@@ -100,18 +111,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:textColor="@color/colorBlue"
             android:text="Xla"
-            android:textSize="32dp"
-
-            android:layout_marginBottom="5dp"/>
-
-        <RadioButton
-            android:id="@+id/radio_wix"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
-            android:text="Wix"
             android:textSize="32dp"
             android:textColor="@color/colorBlue"
             android:layout_marginBottom="5dp"/>
@@ -128,7 +128,7 @@
         android:text="Regresar" />
 
     <Button
-        android:id="@+id/pronombresakitAudioBtn"
+        android:id="@+id/pronombresxlakanAudioBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/mainGrid"

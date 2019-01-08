@@ -61,14 +61,14 @@ public class pronombresLevel1_3 extends AppCompatActivity {
 
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.radio_akit:
+            case R.id.radio_wixin:
                 if (checked)
                     Toast.makeText(getApplicationContext(),"¡Felicidades!", Toast.LENGTH_SHORT).show();
                 Intent accountIntent = new Intent(pronombresLevel1_3.this, pronombresLevel1_4.class);
                 startActivity(accountIntent);
                 finish();
                 break;
-            case R.id.radio_akin:
+            case R.id.radio_akit:
                 if (checked)
                     Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
                 break;
@@ -76,7 +76,7 @@ public class pronombresLevel1_3 extends AppCompatActivity {
                 if (checked)
                     Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.radio_wix:
+            case R.id.radio_xlakan:
                 if (checked)
                     Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
                 break;

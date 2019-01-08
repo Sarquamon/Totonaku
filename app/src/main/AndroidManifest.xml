@@ -73,7 +73,10 @@
         <activity android:name=".figuras2Level5" />
         <activity android:name=".pronombresLevel1" />
         <activity android:name=".pronombresLevel1_2" />
-        <activity android:name=".pronombresLevel1_3"></activity>
+        <activity android:name=".pronombresLevel1_3" />
+        <activity android:name=".pronombresLevel1_4" />
+        <activity android:name=".pronombresLevel1_5" />
+        <activity android:name=".pronombresLevel1_6"></activity>
     </application>
 
 </manifest>
