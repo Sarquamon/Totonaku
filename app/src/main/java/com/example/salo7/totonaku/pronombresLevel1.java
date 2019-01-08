@@ -8,8 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class pronombresLevel1 extends AppCompatActivity{
-
+public class pronombresLevel1 extends AppCompatActivity {
     private Button pronombres1Level1BackBtn, pronombresakinAudioBtn, pronombresakitAudioBtn;
     private MediaPlayer pronombresakinAudio, pronombresakitAudio;
 
