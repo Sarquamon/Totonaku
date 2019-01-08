@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -69,7 +69,9 @@
         <activity android:name=".LevelsHub" />
         <activity android:name=".pronombresLevel1" />
         <activity android:name=".numero1Level2" />
-        <activity android:name=".numeros2Level3"></activity>
+        <activity android:name=".numeros2Level3" />
+        <activity android:name=".figuras1Level4" />
+        <activity android:name=".figuras2Level5"></activity>
     </application>
 
 </manifest>
