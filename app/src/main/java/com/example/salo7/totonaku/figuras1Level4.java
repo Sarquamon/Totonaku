@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class figuras1Level4 extends AppCompatActivity {
@@ -31,4 +32,33 @@ public class figuras1Level4 extends AppCompatActivity {
             }
         });
     }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radio_akit:
+                if (checked)
+                    Toast.makeText(getApplicationContext(),"¡Felicidades!", Toast.LENGTH_SHORT).show();
+                Intent accountIntent = new Intent(figuras1Level4.this, LevelsHub.class);
+                startActivity(accountIntent);
+                finish();
+                break;
+            case R.id.radio_akin:
+                if (checked)
+                    Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.radio_xla:
+                if (checked)
+                    Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.radio_wix:
+                if (checked)
+                    Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
 }

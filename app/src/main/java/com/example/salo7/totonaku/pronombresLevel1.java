@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class pronombresLevel1 extends AppCompatActivity {
@@ -15,17 +16,17 @@ public class pronombresLevel1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pronombres_level1);
+        setContentView(R.layout.activity_pronombres_level2);
 
         //Button Asign
         pronombres1Level1BackBtn = (Button) findViewById(R.id.pronombres1Level1BackBtn);
-        pronombresakinAudioBtn = (Button) findViewById(R.id.pronombresakinAudioBtn);
+        //pronombresakinAudioBtn = (Button) findViewById(R.id.pronombresakinAudioBtn);
         pronombresakitAudioBtn = (Button) findViewById(R.id.pronombresakitAudioBtn);
 
         pronombresakinAudio = MediaPlayer.create(pronombresLevel1.this,R.raw.pronombresakin);
         pronombresakitAudio = MediaPlayer.create(pronombresLevel1.this,R.raw.pronombresakit);
 
-        ponerpronombresakinAudio (pronombresakinAudioBtn);
+        //ponerpronombresakinAudio (pronombresakinAudioBtn);
         ponerpronombresakitAudio (pronombresakitAudioBtn);
         Regresar(pronombres1Level1BackBtn);
     }
@@ -39,14 +40,14 @@ public class pronombresLevel1 extends AppCompatActivity {
         });
     }
 
-    private void ponerpronombresakinAudio(Button pronombresakinAudioBtn) {
+    /*private void ponerpronombresakinAudio(Button pronombresakinAudioBtn) {
         pronombresakinAudioBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 pronombresakinAudio.start();
             }
         });
-    }
+    }*/
 
     public void onPause(){
         super.onPause();
@@ -65,4 +66,33 @@ public class pronombresLevel1 extends AppCompatActivity {
             }
         });
     }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radio_akit:
+                if (checked)
+                    Toast.makeText(getApplicationContext(),"¡Felicidades!", Toast.LENGTH_SHORT).show();
+                    Intent accountIntent = new Intent(pronombresLevel1.this, pronombresLevel1_2.class);
+                    startActivity(accountIntent);
+                    finish();
+                    break;
+            case R.id.radio_akin:
+                if (checked)
+                    Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
+                    break;
+            case R.id.radio_xla:
+                if (checked)
+                    Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.radio_wix:
+                if (checked)
+                    Toast.makeText(getApplicationContext(),"Intentalo de nuevo", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
 }
