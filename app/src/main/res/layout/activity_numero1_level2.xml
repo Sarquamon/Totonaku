@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@drawable/levelshubbackground"
     android:weightSum="10"
-    tools:context=".numero1Level2">
+    tools:context=".pronombresLevel1">
 
     <GridLayout
         android:id="@+id/mainGrid"
@@ -48,12 +48,12 @@
                     android:layout_width="120dp"
                     android:layout_height="90dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/yo" />
+                    android:src="@drawable/number1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yo"
+                    android:text="Número 1"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -67,13 +67,86 @@
 
     </GridLayout>
 
+    <RadioGroup
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="375dp"
+        >
+
+        <RadioButton
+            android:id="@+id/radio_akit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlue"
+            android:onClick="onRadioButtonClicked"
+            android:text="Akit"
+            android:textSize="32dp"
+            android:layout_marginBottom="5dp"
+            />
+
+        <RadioButton
+            android:id="@+id/radio_tutu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Tutu"
+            android:textSize="32dp"
+            android:textColor="@color/colorBlue"
+            android:layout_marginBottom="5dp"/>
+
+        <RadioButton
+            android:id="@+id/radio_tuy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="@color/colorBlue"
+            android:text="Tuy"
+            android:textSize="32dp"
+
+            android:layout_marginBottom="5dp"/>
+
+        <RadioButton
+            android:id="@+id/radio_tum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Tum"
+            android:textSize="32dp"
+            android:textColor="@color/colorBlue"
+            android:layout_marginBottom="5dp"/>
+
+    </RadioGroup>
+
     <Button
-        android:id="@+id/numeros1Level2BackBtn"
+        android:id="@+id/pronombres1Level1BackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="26dp"
         android:text="Regresar" />
+
+    <Button
+        android:id="@+id/numeros1TumAudioBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mainGrid"
+        android:layout_marginBottom="-80dp"
+        android:layout_marginLeft="280dp"
+        android:text="Escuchar" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="¿Que sonido hace?"
+        android:textColor="@color/colorBlue"
+        android:textSize="26sp" />
 
 </RelativeLayout>
