@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1014449164669",
+    "firebase_url": "https://totonaku-ab39a.firebaseio.com",
+    "project_id": "totonaku-ab39a",
+    "storage_bucket": "totonaku-ab39a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014449164669:android:921af7d8fb309a3c",
+        "android_client_info": {
+          "package_name": "com.example.salo7.totonaku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014449164669-52r8037gj5gutbhao91fr4ohro8afqp3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.salo7.totonaku",
+            "certificate_hash": "553d1c0e282f6ec12c2de586bfeb7bdfee663551"
+          }
+        },
+        {
+          "client_id": "1014449164669-a64qepiar5cspfgt8vrvcao6be7ur018.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKAID9zuRHl6y88eAXkUQOneH3vewNIxk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014449164669-a64qepiar5cspfgt8vrvcao6be7ur018.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

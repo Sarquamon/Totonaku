@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Totonaku</string>
+    <string name="facebook_app_id">1150190121810250</string>
+    <string name="fb_login_protocol_scheme">fb1150190121810250</string>
+    <string name="title_activity_levels_hub">LevelsHub</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+</resources>
