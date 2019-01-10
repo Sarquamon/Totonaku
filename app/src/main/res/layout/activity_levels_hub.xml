@@ -303,13 +303,21 @@
 
         <TextView
             android:id="@+id/textGrid"
-            android:text="NIVELES"
-            android:textSize="34sp"
-            android:textColor="@android:color/white"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:text="NIVELES"
+            android:textColor="@android:color/white"
+            android:textSize="34sp" />
 
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/CerrarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Sesion" />
 
 </LinearLayout>

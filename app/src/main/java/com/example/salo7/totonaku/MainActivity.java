@@ -1,26 +1,22 @@
 package com.example.salo7.totonaku;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -31,22 +27,21 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FacebookAuthCredential;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     private SignInButton mGoogleBtn;
-    private Button mFacebookBtn;
+    private Button mFacebookBtn, registryBtn;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
     private CallbackManager mCallbackManager;
+    private EditText userPasswordRegistry,userEmailRegistry;
     private static final int RC_SIGN_IN = 1;
     private static final String TAG = "FACELOG";
 
@@ -61,8 +56,14 @@ public class MainActivity extends AppCompatActivity {
         //Initialize Login Buttons
         mFacebookBtn = (Button) findViewById(R.id.facebookBtn);
         mGoogleBtn = findViewById(R.id.googleBtn);
+        registryBtn = findViewById(R.id.loginBtn);
+
+        //email, password Registry Assignment
+        userEmailRegistry = findViewById(R.id.userEmailLogin);
+        userPasswordRegistry = findViewById(R.id.userPasswordLogin);
 
         //Configure Email Login
+        userRegistryEmail(registryBtn);
 
 
         // Configure Google Sign In
@@ -104,6 +105,55 @@ public class MainActivity extends AppCompatActivity {
                     public void onError(FacebookException error) {
                         Log.d(TAG, "facebook:onError", error);
                         // ...
+                    }
+                });
+            }
+        });
+    }
+
+    private void userRegistryEmail(Button registryBtn) {
+        registryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = userEmailRegistry.getText().toString().trim();
+                String password = userPasswordRegistry.getText().toString().trim();
+
+                if (email.isEmpty()){
+                    userEmailRegistry.setError("Email es requerido");
+                    userEmailRegistry.requestFocus();
+                    return;
+
+                } if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    userEmailRegistry.setError("Favor de ingresar un email valido");
+                    userEmailRegistry.requestFocus();
+                    return;
+
+                } if (password.isEmpty()) {
+                    userPasswordRegistry.setError("Contraseña requerida");
+                    userPasswordRegistry.requestFocus();
+                    return;
+                }if (password.length()<6){
+                    userPasswordRegistry.setError("Contraseña debe ser minimo de 6 caracteres");
+                    userPasswordRegistry.requestFocus();
+                    return;
+                }
+
+                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), "Se registro correctamente", Toast.LENGTH_SHORT).show();
+                            Intent accountIntent = new Intent(MainActivity.this, LevelsHub.class);
+                            accountIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(accountIntent);
+                            finish();
+                        }else {
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException){
+                                Toast.makeText(getApplicationContext(), "Ya esta registrado este usuario" + task.getException(), Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(getApplicationContext(), "Ocurrio un error" + task.getException(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
                     }
                 });
             }

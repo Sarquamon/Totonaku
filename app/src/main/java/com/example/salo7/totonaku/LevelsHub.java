@@ -7,10 +7,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class LevelsHub extends AppCompatActivity {
 
     //private CardView pronombresCard1, numeros1Card2, figuras1Card3, numeros2Card4, figuras2Card5;
     private Button pronombresBtn1, numeros1Btn2, figuras1Btn3, numeros2Btn4, figuras2Btn5;
+    private Button CerrarSesion;
+    FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,25 @@ public class LevelsHub extends AppCompatActivity {
         figuras1Level3 (figuras1Btn3);
         numeros2Level4 (numeros2Btn4);
         figuras2Level5 (figuras2Btn5);
+
+
+        mAuth = FirebaseAuth.getInstance();
+
+        CerrarSesion = findViewById(R.id.CerrarSesion);
+
+
+        CerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                LoginManager.getInstance().logOut();
+                Toast.makeText(getApplicationContext(),"Cerrado de sesion correcto", Toast.LENGTH_SHORT).show();
+                Intent accountIntent = new Intent(LevelsHub.this, MainActivity.class);
+                startActivity(accountIntent);
+                finish();
+            }
+        });
+
     }
 
 

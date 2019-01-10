@@ -70,7 +70,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/userPasswordRegistry"
+        android:id="@+id/userPasswordLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -80,14 +80,14 @@
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:textAlignment="viewStart"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         app:layout_constraintBottom_toTopOf="@+id/loginBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEmailRegistry" />
+        app:layout_constraintTop_toBottomOf="@+id/userEmailLogin" />
 
     <EditText
-        android:id="@+id/userEmailRegistry"
+        android:id="@+id/userEmailLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -98,8 +98,8 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:textAlignment="viewStart"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/userPasswordRegistry"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintBottom_toTopOf="@+id/userPasswordLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -115,7 +115,7 @@
         android:text="Iniciar Sesión"
         android:textColor="@color/colorBlue"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/userEmailRegistry"
+        app:layout_constraintBottom_toTopOf="@+id/userEmailLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.377"
@@ -128,7 +128,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Registrarse"
+        android:text="Iniciar Sesion"
         app:layout_constraintBottom_toTopOf="@+id/registryLoginLink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
