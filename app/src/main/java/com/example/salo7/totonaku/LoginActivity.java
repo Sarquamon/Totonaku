@@ -144,6 +144,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Intent accountIntent = new Intent(LoginActivity.this, LevelsHub.class);
                             accountIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            accountIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(accountIntent);
                             finish();
                         }else{

@@ -145,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Se registro correctamente", Toast.LENGTH_SHORT).show();
                             Intent accountIntent = new Intent(MainActivity.this, LevelsHub.class);
                             accountIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            accountIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(accountIntent);
                             finish();
                         }else {
