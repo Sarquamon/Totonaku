@@ -8,25 +8,27 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class figuras1Level4 extends AppCompatActivity {
+public class numeros2Level4 extends AppCompatActivity {
 
-    private Button figuras1Level4BackBtn;
+    private Button numeros2Level3BackBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_figuras1_level4);
+        setContentView(R.layout.activity_numeros2_level3);
 
-        figuras1Level4BackBtn = (Button) findViewById(R.id.figuras1Level4BackBtn);
 
-        regresar(figuras1Level4BackBtn);
+        numeros2Level3BackBtn = (Button) findViewById(R.id.numeros2Level3BackBtn);
+
+        regresar(numeros2Level3BackBtn);
     }
-    private void regresar(Button figuras1Level4BackBtn) {
-        figuras1Level4BackBtn.setOnClickListener(new View.OnClickListener() {
+
+    private void regresar(Button numeros1Level2BackBtn) {
+        numeros2Level3BackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Funciona", Toast.LENGTH_SHORT).show();
-                Intent accountIntent = new Intent(figuras1Level4.this, LevelsHub.class);
+                Intent accountIntent = new Intent(numeros2Level4.this, LevelsHub.class);
                 startActivity(accountIntent);
                 finish();
             }
@@ -42,7 +44,7 @@ public class figuras1Level4 extends AppCompatActivity {
             case R.id.radio_akit:
                 if (checked)
                     Toast.makeText(getApplicationContext(),"¡Felicidades!", Toast.LENGTH_SHORT).show();
-                Intent accountIntent = new Intent(figuras1Level4.this, LevelsHub.class);
+                Intent accountIntent = new Intent(numeros2Level4.this, LevelsHub.class);
                 startActivity(accountIntent);
                 finish();
                 break;
@@ -60,5 +62,6 @@ public class figuras1Level4 extends AppCompatActivity {
                 break;
         }
     }
+
 
 }

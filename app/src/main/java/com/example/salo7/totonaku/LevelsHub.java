@@ -101,7 +101,7 @@ public class LevelsHub extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Funciona", Toast.LENGTH_SHORT).show();
-                Intent accountIntent = new Intent(LevelsHub.this, numeros2Level3.class);
+                Intent accountIntent = new Intent(LevelsHub.this, numeros2Level4.class);
                 startActivity(accountIntent);
                 finish();
             }
@@ -112,7 +112,7 @@ public class LevelsHub extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Funciona", Toast.LENGTH_SHORT).show();
-                Intent accountIntent = new Intent(LevelsHub.this, numeros2Level3.class);
+                Intent accountIntent = new Intent(LevelsHub.this, numeros2Level4.class);
                 startActivity(accountIntent);
                 finish();
             }
