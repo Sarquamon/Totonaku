@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class numeros1Level2_2 extends AppCompatActivity {
+public class numeros1Level2_6 extends AppCompatActivity {
 
     private Button pronombres1Level1BackBtn, checarRespuesta;
     private EditText respuestaUsuario;
@@ -16,7 +16,7 @@ public class numeros1Level2_2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numeros1_level2_2);
+        setContentView(R.layout.activity_numeros1_level2_6);
 
         //Button Asign
         pronombres1Level1BackBtn = (Button) findViewById(R.id.pronombres1Level1BackBtn);
@@ -32,19 +32,19 @@ public class numeros1Level2_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String respuestaNivel = "tum", respuestaNivel2 = "Tum";
+                String respuestaNivel = "tuy", respuestaNivel2 = "Tuy";
 
-                if (respuestaUsuario.getText().toString().trim().equals(respuestaNivel)){
-                    Toast.makeText(getApplicationContext(), "Funciona", Toast.LENGTH_SHORT).show();
-                    Intent accountIntent = new Intent(numeros1Level2_2.this, numeros1Level2_3.class);
+                if (respuestaUsuario.getText().toString().trim().equals(respuestaNivel)) {
+                    Toast.makeText(getApplicationContext(), "¡Felicidades superaste el nivel 2!", Toast.LENGTH_SHORT).show();
+                    Intent accountIntent = new Intent(numeros1Level2_6.this, LevelsHub.class);
                     startActivity(accountIntent);
                     finish();
-                }else if (respuestaUsuario.getText().toString().trim().equals(respuestaNivel2)){
-                    Toast.makeText(getApplicationContext(), "Funciona", Toast.LENGTH_SHORT).show();
-                    Intent accountIntent = new Intent(numeros1Level2_2.this, numeros1Level2_3.class);
+                } else if (respuestaUsuario.getText().toString().trim().equals(respuestaNivel2)) {
+                    Toast.makeText(getApplicationContext(), "¡Felicidades superaste el nivel 2!", Toast.LENGTH_SHORT).show();
+                    Intent accountIntent = new Intent(numeros1Level2_6.this, LevelsHub.class);
                     startActivity(accountIntent);
                     finish();
-                }else{
+                } else {
                     Toast.makeText(getApplicationContext(), "Ingrese la respuesta correcta ", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -56,7 +56,7 @@ public class numeros1Level2_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Funciona", Toast.LENGTH_SHORT).show();
-                Intent accountIntent = new Intent(numeros1Level2_2.this, LevelsHub.class);
+                Intent accountIntent = new Intent(numeros1Level2_6.this, LevelsHub.class);
                 startActivity(accountIntent);
                 finish();
             }

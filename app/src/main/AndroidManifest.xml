@@ -77,7 +77,11 @@
         <activity android:name=".pronombresLevel1_4" />
         <activity android:name=".pronombresLevel1_5" />
         <activity android:name=".pronombresLevel1_6" />
-        <activity android:name=".numeros1Level2_2"></activity>
+        <activity android:name=".numeros1Level2_2" />
+        <activity android:name=".numeros1Level2_3" />
+        <activity android:name=".numeros1Level2_4" />
+        <activity android:name=".numeros1Level2_5" />
+        <activity android:name=".numeros1Level2_6"></activity>
     </application>
 
 </manifest>
